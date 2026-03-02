@@ -1,0 +1,391 @@
+/* --- RESET E BASES --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+body {
+    color: #1a1a1a;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+}
+
+.bg-creme {
+    background-color: #f4f1ea; /* Inspirado no fundo do seu portfólio/Cuca */
+}
+
+.container {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 0 24px;
+}
+
+/* --- NAVBAR (CABEÇALHO) --- */
+.navbar {
+    background-color: #0b132b; /* Azul bem escuro, quase marinho */
+    color: #ffffff;
+    padding: 20px 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.nav-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+}
+
+.logo-highlight {
+    color: #4facfe;
+    font-weight: 400;
+}
+
+.nav-links {
+    display: flex;
+    gap: 30px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.9rem;
+    opacity: 0.8;
+    transition: opacity 0.3s;
+}
+
+.nav-links a:hover {
+    opacity: 1;
+}
+
+/* --- HOME HERO --- */
+.page-content {
+    max-height: 1vh;
+    min-height: calc(100vh - 80px);
+    display: flex;
+    align-items: center;
+}
+
+.hero-section {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 50px;
+    padding: 60px 0;
+}
+
+.hero-text {
+    flex: 1;
+    max-width: 600px;
+}
+
+.tag {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 50px;
+    font-size: 0.8rem;
+    font-weight: 800;
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.tag-blue {
+    background-color: #dbeafe;
+    color: #1e3a8a;
+}
+
+.title-main {
+    font-size: 3rem;
+    font-weight: 800;
+    line-height: 1.1;
+    margin-bottom: 24px;
+    color: #0b132b;
+}
+
+.paragraph-main {
+    font-size: 1.1rem;
+    color: #4a4a4a;
+    margin-bottom: 40px;
+}
+
+/* Decoração simples caso não tenha imagem */
+.hero-image-placeholder {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/* Estilização da nova imagem do Logo */
+.hero-logo-graphic {
+    width: 100%; /* Escala para preencher o contêiner */
+    max-width: 400px; /* Mantém um tamanho máximo agradável */
+    height: auto; /* Mantém a proporção */
+    border-radius: 300px; /* Mesma curvatura dos cards */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.05); /* Sombra suave corporativa */
+}
+
+/* --- BOTÕES --- */
+.btn-primary {
+    background-color: #0b132b;
+    color: #ffffff;
+    border: none;
+    border-radius: 8px;
+    padding: 18px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 10px 20px rgba(11, 19, 43, 0.15);
+}
+
+.btn-primary:hover {
+    background-color: #1c2b59;
+    transform: translateY(-3px);
+    box-shadow: 0 15px 25px rgba(11, 19, 43, 0.2);
+}
+
+.btn-secondary {
+    background-color: transparent;
+    color: #0b132b;
+    border: 2px solid #0b132b;
+    border-radius: 8px;
+    padding: 16px 40px;
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn-secondary:hover {
+    background-color: #0b132b;
+    color: #ffffff;
+}
+
+/* --- QUIZ PROGRESSO --- */
+.navbar-quiz {
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.progress-wrapper {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.progress-text {
+    font-size: 0.85rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.progress-bar-bg {
+    width: 100%;
+    height: 6px;
+    background-color: rgba(255, 255, 255, 0.2);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.progress-bar-fill {
+    height: 100%;
+    width: 0%;
+    background-color: #4facfe;
+    transition: width 0.4s ease;
+}
+
+/* --- QUIZ PERGUNTAS --- */
+.quiz-content {
+    display: flex;
+    justify-content: center;
+    padding: 60px 24px;
+}
+
+.quiz-card {
+    background-color: #ffffff;
+    width: 100%;
+    max-width: 800px;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+}
+
+.question-title {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #0b132b;
+    margin-bottom: 40px;
+    line-height: 1.4;
+}
+
+.options-group {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.options-group button {
+    background-color: #ffffff;
+    color: #1a1a1a;
+    border: 2px solid #e5e7eb;
+    border-radius: 12px;
+    padding: 20px 24px;
+    font-size: 1rem;
+    text-align: left;
+    cursor: pointer;
+    transition: all 0.2s ease;
+}
+
+.options-group button:hover {
+    border-color: #0b132b;
+    background-color: #f8fafc;
+    transform: translateX(5px);
+}
+
+/* --- RESULTADOS --- */
+.result-content {
+    padding: 60px 24px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.result-header {
+    margin-bottom: 40px;
+}
+
+.result-card {
+    background-color: #ffffff;
+    max-width: 700px;
+    padding: 50px;
+    border-radius: 16px;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.05);
+    margin-bottom: 40px;
+    border-top: 8px solid;
+}
+
+.icon-result {
+    font-size: 4rem;
+    margin-bottom: 20px;
+}
+
+.result-title {
+    font-size: 2.2rem;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+/* Cores específicas dos perfis */
+.card-visionario { border-color: #8b5cf6; }
+.card-visionario .result-title { color: #8b5cf6; }
+
+.card-democratico { border-color: #10b981; }
+.card-democratico .result-title { color: #10b981; }
+
+.card-coach { border-color: #f59e0b; }
+.card-coach .result-title { color: #f59e0b; }
+
+.card-comandante { border-color: #ef4444; }
+.card-comandante .result-title { color: #ef4444; }
+
+/* --- UTILITÁRIOS --- */
+.hidden { display: none !important; }
+
+.lock-scroll {
+    overflow: hidden;
+    height: 100vh; /* Força o body a ter exatamente a altura da tela */
+}
+/* --- DEBUG MENU (Escondido) --- */
+.secret-dot {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 30px;
+    height: 30px;
+    cursor: default;
+    z-index: 999;
+}
+
+.admin-menu {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    z-index: 1000;
+    width: 250px;
+}
+
+.admin-title {
+    font-size: 0.8rem;
+    font-weight: 800;
+    margin-bottom: 12px;
+    color: #4a4a4a;
+}
+
+.btn-admin {
+    display: block;
+    width: 100%;
+    background: transparent;
+    border: 1px solid #e5e7eb;
+    padding: 10px;
+    margin-bottom: 8px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 0.85rem;
+}
+.btn-admin:hover { background-color: #f4f1ea; }
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    .hero-section {
+        flex-direction: column;
+        text-align: center;
+        padding: 40px 0;
+    }
+
+    .hero-image-placeholder {
+        display: none; /* Esconde o círculo decorativo no celular */
+    }
+
+    .nav-links {
+        display: none;
+    }
+
+    .title-main {
+        font-size: 2.2rem;
+    }
+
+    .quiz-card {
+        padding: 30px 20px;
+    }
+
+    .question-title {
+        font-size: 1.3rem;
+    }
+
+    .options-group button {
+        padding: 16px 20px;
+        font-size: 0.95rem;
+    }
+
+    .result-card {
+        padding: 40px 20px;
+    }
+}
