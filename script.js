@@ -1,7 +1,6 @@
 // ==========================================
 // 1. ALGORITMO DE EMBARALHAMENTO (Fisher-Yates)
 // ==========================================
-// Garante que a ordem dos botões sempre mude, evitando vício nas respostas
 function shuffleArray(array) {
     let newArray = [...array];
     for (let i = newArray.length - 1; i > 0; i--) {
@@ -12,142 +11,143 @@ function shuffleArray(array) {
 }
 
 // ==========================================
-// 2. BANCO DE DADOS (15 QUESTÕES)
+// 2. BANCO DE DADOS (15 QUESTÕES - 4 PERFIS SENAI)
+// Perfis: Transformacional, Servidor, Democrático, Autocrático
 // ==========================================
 const allQuestions = [
     {
-        q: "Um cliente VIP antecipou o prazo de entrega do projeto em duas semanas. Como você repassa isso à equipe?",
+        q: "Um prazo importante mudou e a equipe precisa entregar o projeto na metade do tempo. Como você age?",
         options: [
-            { t: "Reorganizo o cronograma imediatamente, corto escopo não essencial e distribuo as novas metas.", p: "Comandante" },
-            { t: "Reúno todos, explico a situação com transparência e pergunto: 'Como podemos resolver isso juntos?'", p: "Democrático" },
-            { t: "Mostro como essa entrega antecipada vai nos posicionar como líderes de mercado e nos abrir portas.", p: "Visionário" },
-            { t: "Sento com os líderes de cada área para entender onde estão os gargalos e ofereço suporte.", p: "Coach" }
+            { t: "Assumo o controle, redefino as tarefas e cobro os prazos estritamente para garantir a entrega.", p: "Autocrático" },
+            { t: "Faço uma reunião rápida para ouvirmos o grupo e decidirmos juntos como vamos reorganizar o trabalho.", p: "Democrático" },
+            { t: "Faço um discurso inspirador lembrando o propósito do projeto e como esse desafio nos fará inovar.", p: "Transformacional" },
+            { t: "Converso individualmente para ver como posso ajudar a tirar os obstáculos do caminho de cada um.", p: "Servidor" }
         ]
     },
     {
-        q: "Dois desenvolvedores seniores estão discutindo feio sobre qual tecnologia usar na nova funcionalidade. O que você faz?",
+        q: "Faltam poucas horas para o lançamento e ocorre um erro crítico no sistema que paralisa a operação.",
         options: [
-            { t: "Analiso os dados práticos de desempenho e decido pela opção mais rápida e segura para o projeto.", p: "Comandante" },
-            { t: "Faço uma reunião com o time inteiro para que todos votem e cheguemos a um consenso.", p: "Democrático" },
-            { t: "Lembro a eles o objetivo final do nosso produto e peço que escolham a que melhor atende a essa visão.", p: "Visionário" },
-            { t: "Faço uma mediação, ajudando ambos a verem os pontos fortes do outro e chegarem a um acordo.", p: "Coach" }
+            { t: "Tomo a decisão imediata sobre a solução técnica e delego ações sem espaço para debate.", p: "Autocrático" },
+            { t: "Pergunto rapidamente a opinião do time técnico para que a equipe escolha o melhor plano B.", p: "Democrático" },
+            { t: "Encorajo a equipe a ver a crise como uma oportunidade para testarmos uma nova tecnologia.", p: "Transformacional" },
+            { t: "Garanto suporte total, pedindo lanches e zelando pelo bem-estar de quem está resolvendo o erro.", p: "Servidor" }
         ]
     },
     {
-        q: "Um membro da equipe cometeu um erro crítico que derrubou o sistema por 2 horas. A poeira baixou, como você age?",
+        q: "Dois membros seniores da equipe estão brigando publicamente sobre qual ideia de design utilizar.",
         options: [
-            { t: "Crio novos processos de verificação e exijo relatórios de erro para que isso nunca mais se repita.", p: "Comandante" },
-            { t: "Reúno a equipe para uma 'retrospectiva sem culpa' para entendermos juntos onde o processo falhou.", p: "Democrático" },
-            { t: "Uso o erro como exemplo de que estamos arriscando e inovando, mas ajusto a direção.", p: "Visionário" },
-            { t: "Chamo a pessoa para um bate-papo em particular, dou feedback construtivo e vejo como posso ajudá-la a melhorar.", p: "Coach" }
+            { t: "Intervenho, escolho a ideia mais viável e encerro a discussão.", p: "Autocrático" },
+            { t: "Coloco as duas ideias em pauta e faço a equipe inteira votar na melhor.", p: "Democrático" },
+            { t: "Desafio os dois a fundirem as ideias para criarmos algo completamente revolucionário.", p: "Transformacional" },
+            { t: "Faço uma mediação em particular focando em preservar a relação e o lado emocional de ambos.", p: "Servidor" }
         ]
     },
     {
-        q: "O orçamento do seu departamento foi cortado em 20%. Qual a sua primeira atitude?",
+        q: "Um novo software de gestão obrigatório foi adotado, mas a equipe está resistindo muito em usá-lo.",
         options: [
-            { t: "Faço os cortes cirúrgicos necessários imediatamente para não comprometer a operação principal.", p: "Comandante" },
-            { t: "Abro a planilha de custos com o time e decidimos juntos onde podemos economizar.", p: "Democrático" },
-            { t: "Refaço o planejamento estratégico focando em inovação com baixo custo para contornar a crise.", p: "Visionário" },
-            { t: "Garanto que os cortes não afetem os programas de treinamento e bem-estar da equipe.", p: "Coach" }
+            { t: "Exijo o uso imediato e deixo claro que é a nova regra da empresa.", p: "Autocrático" },
+            { t: "Crio um comitê com representantes da equipe para encontrar formas de facilitar a transição.", p: "Democrático" },
+            { t: "Mostro como essa ferramenta vai nos transformar na equipe mais eficiente do mercado.", p: "Transformacional" },
+            { t: "Ofereço treinamento personalizado, focando nas maiores dificuldades e angústias de cada pessoa.", p: "Servidor" }
         ]
     },
     {
-        q: "Você notou que uma pessoa do time está muito desmotivada e entregando abaixo do esperado. Qual a abordagem?",
+        q: "O cliente mandou um feedback dizendo que a equipe está entregando as tarefas de forma muito lenta.",
         options: [
-            { t: "Deixo as metas dela mais claras e dou um prazo para que a produtividade volte ao normal.", p: "Comandante" },
-            { t: "Pergunto ao resto da equipe se notaram algo e tento melhorar o clima do ambiente de trabalho.", p: "Democrático" },
-            { t: "Relembro a ela o impacto do trabalho dela no grande propósito da empresa.", p: "Visionário" },
-            { t: "Faço reuniões 1:1 focadas em entender suas frustrações de carreira e traçar um plano de desenvolvimento.", p: "Coach" }
+            { t: "Repasso o feedback severamente e exijo aumento de velocidade a partir de hoje.", p: "Autocrático" },
+            { t: "Levo o feedback para o grupo e pergunto: 'Onde acham que podemos ganhar tempo?'", p: "Democrático" },
+            { t: "Uso a crítica como combustível para inspirá-los a superar expectativas na próxima entrega.", p: "Transformacional" },
+            { t: "Defendo a equipe internamente e ajusto processos para não sobrecarregar a saúde mental deles.", p: "Servidor" }
         ]
     },
     {
-        q: "A diretoria pediu uma ideia inovadora para o próximo trimestre. Como você conduz isso?",
+        q: "É o começo do ano e você precisa traçar as metas anuais do seu departamento.",
         options: [
-            { t: "Avalio as tendências de mercado, tomo a decisão e passo as diretrizes para a equipe executar.", p: "Comandante" },
-            { t: "Organizo uma sessão de brainstorming onde todas as ideias são bem-vindas e votadas.", p: "Democrático" },
-            { t: "Apresento um conceito ousado e disruptivo que venho pensando e inspiro a equipe a comprar a ideia.", p: "Visionário" },
-            { t: "Incentivo os membros menos experientes a liderarem a apresentação de ideias para desenvolverem confiança.", p: "Coach" }
+            { t: "Defino as metas baseadas nos números da diretoria e passo as diretrizes aos funcionários.", p: "Autocrático" },
+            { t: "Faço um workshop colaborativo onde o time decide e assina as metas coletivamente.", p: "Democrático" },
+            { t: "Apresento uma visão grandiosa do futuro e os motivo a quebrarem recordes da indústria.", p: "Transformacional" },
+            { t: "Construo as metas do departamento alinhadas ao plano de desenvolvimento pessoal de cada um.", p: "Servidor" }
         ]
     },
     {
-        q: "Durante uma reunião, um cliente faz críticas pesadas e injustas ao trabalho da sua equipe. Qual a sua reação?",
+        q: "O funcionário mais talentoso da sua equipe recebeu uma proposta de emprego de um concorrente.",
         options: [
-            { t: "Defendo o trabalho com dados concretos, imponho limites, mas proponho uma solução prática.", p: "Comandante" },
-            { t: "Ouço pacientemente e depois discuto com a equipe como podemos melhorar nossa comunicação com ele.", p: "Democrático" },
-            { t: "Reenquadro a crítica do cliente, mostrando a ele o panorama geral e a direção inovadora que estamos tomando.", p: "Visionário" },
-            { t: "Após a reunião, converso com a equipe para garantir que a crítica não abale a autoconfiança deles.", p: "Coach" }
+            { t: "Avalio se ele é insubstituível e faço uma contraproposta financeira direta.", p: "Autocrático" },
+            { t: "Pergunto ao time o que a outra empresa tem de diferente que podemos adotar na nossa.", p: "Democrático" },
+            { t: "Mostro as inovações em que ele está envolvido e como o trabalho dele aqui mudará o mercado.", p: "Transformacional" },
+            { t: "Apoio a decisão que for melhor para a vida pessoal e carreira dele, com total empatia.", p: "Servidor" }
         ]
     },
     {
-        q: "A empresa adotou um novo software obrigatório, mas a equipe está resistindo à mudança. O que fazer?",
+        q: "Por um descuido de orçamento, o projeto da equipe gerou um prejuízo razoável para a empresa.",
         options: [
-            { t: "Estabeleço uma data limite para a transição e cobro o uso exclusivo da nova ferramenta.", p: "Comandante" },
-            { t: "Crio um comitê com representantes da equipe para avaliar as dificuldades e adaptar a transição.", p: "Democrático" },
-            { t: "Faço uma apresentação mostrando como essa ferramenta vai revolucionar a forma como trabalhamos no futuro.", p: "Visionário" },
-            { t: "Identifico quem tem mais facilidade e peço que sejam 'mentores' dos colegas com mais dificuldade.", p: "Coach" }
+            { t: "Assumo a culpa para a chefia, mas crio controles rígidos imediatos no setor.", p: "Autocrático" },
+            { t: "Sento com a equipe inteira, abro as planilhas e achamos soluções de economia em conjunto.", p: "Democrático" },
+            { t: "Aproveito o erro para convencer a diretoria de que precisamos pivotar para uma nova estratégia.", p: "Transformacional" },
+            { t: "Acalmo a equipe, que está se sentindo culpada, e garanto que ninguém perderá o emprego.", p: "Servidor" }
         ]
     },
     {
-        q: "Um talento da sua equipe recebeu uma proposta de outra empresa. Como você tenta retê-lo?",
+        q: "Um funcionário cometeu um erro que afetou gravemente a apresentação para o cliente final.",
         options: [
-            { t: "Ofereço um aumento de salário ou bônus por produtividade, se os números justificarem.", p: "Comandante" },
-            { t: "Pergunto o que a equipe acha que podemos melhorar no nosso ambiente para reter talentos.", p: "Democrático" },
-            { t: "Mostro a ele o futuro da nossa empresa e os projetos incríveis que ele lideraria se ficasse.", p: "Visionário" },
-            { t: "Converso sobre os objetivos de vida dele para ver se consigo alinhar o crescimento dele aqui dentro.", p: "Coach" }
+            { t: "Dou uma advertência e estabeleço checagem dupla em todos os trabalhos dele.", p: "Autocrático" },
+            { t: "Discutimos a falha em grupo para que todos aprendam a evitar o mesmo erro.", p: "Democrático" },
+            { t: "Encorajo o funcionário, mostrando que quem tenta inovar está sujeito a falhas.", p: "Transformacional" },
+            { t: "Chamo-o para conversar em particular e pergunto se ele está passando por problemas em casa.", p: "Servidor" }
         ]
     },
     {
-        q: "Sua equipe bateu a meta anual no mês de outubro. O que você faz nos dois meses restantes?",
+        q: "A equipe bateu a meta de vendas com um mês de antecedência. Como você celebra?",
         options: [
-            { t: "Dobro a meta. Se conseguimos em 10 meses, podemos ir muito mais longe.", p: "Comandante" },
-            { t: "Organizo uma comemoração com todos e decidimos juntos um ritmo mais leve para o fim do ano.", p: "Democrático" },
-            { t: "Aproveito o tempo livre para focar na criação de um produto totalmente novo para o ano que vem.", p: "Visionário" },
-            { t: "Uso esse tempo para que a equipe faça cursos, treinamentos e invista no próprio desenvolvimento.", p: "Coach" }
+            { t: "Parabenizo a todos e aumento a meta do próximo mês para mantermos o ritmo.", p: "Autocrático" },
+            { t: "Disponibilizo um fundo e deixo o time votar livremente em como querem celebrar.", p: "Democrático" },
+            { t: "Faço um discurso motivacional sobre como estamos no caminho de sermos os líderes absolutos.", p: "Transformacional" },
+            { t: "Reconheço o esforço individual de cada um e dou meio período de folga como prêmio.", p: "Servidor" }
         ]
     },
     {
-        q: "Um projeto que você defendeu fracassou. Na hora de dar explicações à diretoria, você:",
+        q: "Uma fofoca mal-intencionada começou a circular no escritório e está destruindo o clima.",
         options: [
-            { t: "Assumo a culpa total, mostro os números do fracasso e o plano de contingência já em ação.", p: "Comandante" },
-            { t: "Levo o relatório feito junto com a equipe, mostrando os aprendizados que tivemos coletivamente.", p: "Democrático" },
-            { t: "Explico que a inovação exige riscos e mostro como esse erro pavimenta o caminho para a próxima grande ideia.", p: "Visionário" },
-            { t: "Foco em como a equipe amadureceu durante o processo e nas novas habilidades que adquiriram.", p: "Coach" }
+            { t: "Identifico os responsáveis e aplico punições para cortar o mal pela raiz.", p: "Autocrático" },
+            { t: "Crio uma roda de conversa geral focada em transparência e respeito no ambiente de trabalho.", p: "Democrático" },
+            { t: "Inspiro a equipe a focar em projetos grandiosos e não perder tempo com intrigas pequenas.", p: "Transformacional" },
+            { t: "Acolho quem foi vítima da fofoca e ofereço suporte emocional para restabelecer o equilíbrio.", p: "Servidor" }
         ]
     },
     {
-        q: "Você assumiu uma equipe nova que está cheia de 'panelinhas'. Como você unifica o grupo?",
+        q: "Um novo funcionário recém-formado acaba de entrar na sua equipe de projetos.",
         options: [
-            { t: "Desfaço as panelinhas na marra, mudando as pessoas de projeto e cobrando resultados.", p: "Comandante" },
-            { t: "Crio dinâmicas de grupo e peço a opinião deles sobre como podemos melhorar o clima.", p: "Democrático" },
-            { t: "Apresento uma meta tão grande e inspiradora que eles esquecem as diferenças para focar no objetivo.", p: "Visionário" },
-            { t: "Faço reuniões individuais para entender as motivações de cada um e promover a empatia entre eles.", p: "Coach" }
+            { t: "Entrego o manual de processos, as KPIs e dou 30 dias para ele entregar resultados.", p: "Autocrático" },
+            { t: "Apresento ao grupo e peço que a equipe divida a responsabilidade da integração dele.", p: "Democrático" },
+            { t: "Mostro a visão revolucionária da empresa e como ele será essencial para as inovações.", p: "Transformacional" },
+            { t: "Zelo pelo conforto dele nos primeiros dias e faço reuniões semanais para saber como ele está.", p: "Servidor" }
         ]
     },
     {
-        q: "Há uma tarefa muito burocrática e chata que precisa ser feita toda semana. Como você distribui?",
+        q: "Durante o brainstorming, um membro muito quieto sugere uma ideia ousada e maluca.",
         options: [
-            { t: "Crio uma escala obrigatória e rigorosa onde cada um faz um pouco, sem exceção.", p: "Comandante" },
-            { t: "Coloco em votação para decidirmos juntos a forma mais justa de revezar esse trabalho.", p: "Democrático" },
-            { t: "Tento automatizar o processo usando uma nova tecnologia para que ninguém precise fazer isso no futuro.", p: "Visionário" },
-            { t: "Vejo quem precisa desenvolver disciplina organizacional e dou a tarefa como um exercício guiado.", p: "Coach" }
+            { t: "Corto a ideia rapidamente se eu perceber que ela não se encaixa no orçamento.", p: "Autocrático" },
+            { t: "Pergunto ao resto do grupo se a maioria concorda com a viabilidade da ideia.", p: "Democrático" },
+            { t: "Abraço a ideia na hora! A inovação exige ousadia e eu o ajudo a apresentar o protótipo.", p: "Transformacional" },
+            { t: "Elogio a coragem dele por ter se expressado e ajudo a polir a ideia sem expô-lo ao risco.", p: "Servidor" }
         ]
     },
     {
-        q: "Surgiu uma fofoca maldosa sobre um membro da equipe. O que você faz?",
+        q: "Uma tarefa chata, manual e burocrática precisa ser realizada toda sexta-feira.",
         options: [
-            { t: "Chamo quem espalhou a fofoca e dou uma advertência clara e direta sobre comportamento profissional.", p: "Comandante" },
-            { t: "Faço uma reunião geral de alinhamento sobre cultura, respeito e convivência no trabalho.", p: "Democrático" },
-            { t: "Ignoro as fofocas e focado em manter todos ocupados com projetos grandiosos.", p: "Visionário" },
-            { t: "Converso separadamente com o alvo da fofoca para dar apoio e com o fofoqueiro para entender o problema real.", p: "Coach" }
+            { t: "Crio uma escala obrigatória de revezamento; é o trabalho e precisa ser feito.", p: "Autocrático" },
+            { t: "Deixo o time decidir entre eles qual é a forma mais justa de lidar com isso.", p: "Democrático" },
+            { t: "Motivo a equipe a encontrar uma solução tecnológica inovadora para automatizar o problema.", p: "Transformacional" },
+            { t: "Sempre que percebo o time estressado, puxo essa tarefa burocrática para mim.", p: "Servidor" }
         ]
     },
     {
-        q: "Última etapa: Como você prefere ser lembrado pela sua equipe quando sair da empresa?",
+        q: "No meio do projeto, o cliente muda completamente a direção do que ele deseja.",
         options: [
-            { t: "Como o líder que trouxe os melhores resultados que a empresa já viu.", p: "Comandante" },
-            { t: "Como o líder que criou o melhor ambiente de trabalho e uma equipe unida.", p: "Democrático" },
-            { t: "Como o líder que mudou a história da empresa e implementou inovações reais.", p: "Visionário" },
-            { t: "Como o líder que ajudou cada um deles a se tornarem profissionais e pessoas melhores.", p: "Coach" }
+            { t: "Travo o pedido, cobro aditivo no contrato e estipulo um novo cronograma fixo.", p: "Autocrático" },
+            { t: "Levo o cenário para a equipe e juntos votamos se aceitamos o novo desafio ou não.", p: "Democrático" },
+            { t: "Aproveito a mudança e prometo entregar algo ainda mais inovador do que ele imaginou.", p: "Transformacional" },
+            { t: "Blindo a minha equipe do estresse do cliente e ajusto as emoções antes de focar na entrega.", p: "Servidor" }
         ]
     }
 ];
@@ -157,43 +157,34 @@ const allQuestions = [
 // ==========================================
 let selectedQuestions = [];
 let currentIndex = 0;
-let scores = { Visionário: 0, Democrático: 0, Coach: 0, Comandante: 0 };
+let scores = { Transformacional: 0, Servidor: 0, Democrático: 0, Autocrático: 0 };
 
 // ==========================================
-// 4. INICIALIZAÇÃO
+// 4. INICIALIZAÇÃO E LÓGICA
 // ==========================================
 window.onload = () => {
-    // Se estiver na tela de Quiz
     if (document.getElementById('question-text')) {
         startQuiz();
     }
-    // Se estiver na tela de Resultado
-    if (document.getElementById('res-Visionário')) {
+    if (document.getElementById('res-Transformacional')) {
         showResult();
     }
 };
 
-// ==========================================
-// 5. LÓGICA DO QUIZ
-// ==========================================
 function startQuiz() {
-    // Pega as exatas 15 questões (sem embaralhar a ordem geral se não quiser, 
-    // mas vamos embaralhar só por garantia para não ficar repetitivo se jogar de novo)
-    selectedQuestions = shuffleArray(allQuestions).slice(0, 15);
+    selectedQuestions = shuffleArray(allQuestions);
     renderQuestion();
 }
 
 function renderQuestion() {
     const question = selectedQuestions[currentIndex];
     
-    // Atualiza Textos
     document.getElementById('question-text').innerText = question.q;
     document.getElementById('current-index').innerText = currentIndex + 1;
     
     const container = document.getElementById('options-container');
     container.innerHTML = ''; 
     
-    // Embaralha AS OPÇÕES para que o "Comandante" ou "Coach" não fiquem sempre na mesma letra
     const randomizedOptions = shuffleArray(question.options);
     
     randomizedOptions.forEach(opt => {
@@ -203,7 +194,6 @@ function renderQuestion() {
         container.appendChild(btn);
     });
 
-    // Atualiza a barra de progresso dinamicamente
     const progress = (currentIndex / 15) * 100;
     const progressFill = document.getElementById('progress-fill');
     if (progressFill) {
@@ -218,21 +208,18 @@ function handleAnswer(profile) {
     if (currentIndex < 15) {
         renderQuestion();
     } else {
-        // Encontra qual perfil teve mais pontos
         const winner = Object.keys(scores).reduce((a, b) => scores[a] > scores[b] ? a : b);
-        // Salva no navegador para mostrar na próxima tela
         localStorage.setItem('userLeaderProfile', winner);
         window.location.href = 'resultado.html';
     }
 }
 
 // ==========================================
-// 6. EXIBIÇÃO DE RESULTADOS
+// 5. EXIBIÇÃO E DEBUG
 // ==========================================
 function showResult() {
     const finalProfile = localStorage.getItem('userLeaderProfile');
     if (finalProfile) {
-        // Remove a classe "hidden" apenas do cartão vencedor
         const winningCard = document.getElementById(`res-${finalProfile}`);
         if (winningCard) {
             winningCard.classList.remove('hidden');
@@ -240,9 +227,6 @@ function showResult() {
     }
 }
 
-// ==========================================
-// 7. FERRAMENTAS PARA APRESENTAÇÃO (DEBUG)
-// ==========================================
 function toggleSecretMenu() {
     const menu = document.getElementById('secret-menu');
     if (menu) {
