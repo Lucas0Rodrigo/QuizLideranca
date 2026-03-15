@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Radar de Projeto | MindLeaders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar navbar-quiz">
+        <div class="container progress-wrapper">
+            <span class="progress-text">Analisando Cenário: <span id="current-index">1</span>/5</span>
+            <div class="progress-bar-bg">
+                <div id="progress-fill" class="progress-bar-fill"></div>
+            </div>
+        </div>
+    </header>
+
+    <main class="container">
+        <div class="quiz-card">
+            <h2 id="question-text" class="question-title">Carregando o radar...</h2>
+            
+            <div id="options-container" class="options-group">
+                </div>
+
+            <button onclick="window.location.href='index.html'" class="btn-back">← Voltar ao Início</button>
+        </div>
+    </main>
+
+    <script src="script-diagnostico.js"></script>
+</body>
+</html>

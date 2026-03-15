@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plano de Ação | MindLeaders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">MindLeaders</div>
+        </div>
+    </header>
+
+    <main class="container result-content">
+        <div class="result-header">
+            <span class="tag tag-blue">Diagnóstico Concluído</span>
+            <h1 class="title-main">O seu projeto exige uma:</h1>
+        </div>
+        
+        <div id="res-Transformacional" class="result-card hidden">
+            <div class="icon-result">🚀</div>
+            <h2 class="result-title">Postura Transformacional</h2>
+            <p class="paragraph-main">O cenário aponta para estagnação criativa. A equipe tem tempo, mas está na zona de conforto e precisa de uma visão inspiradora.</p>
+            <div class="action-box">
+                <h3>O que você deve fazer AGORA:</h3>
+                <ul>
+                    <li>1. Convoque uma reunião de Brainstorming (sem julgamentos).</li>
+                    <li>2. Mostre referências de mercado ousadas para elevar a barra.</li>
+                    <li>3. Provoque a equipe: "Como podemos fazer isso ser 10x melhor?"</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="res-Democrático" class="result-card hidden">
+            <div class="icon-result">🤝</div>
+            <h2 class="result-title">Postura Democrática</h2>
+            <p class="paragraph-main">Vocês estão em fase de planejamento ou lidando com seniores. Impor regras de forma autoritária agora vai gerar forte resistência.</p>
+            <div class="action-box">
+                <h3>O que você deve fazer AGORA:</h3>
+                <ul>
+                    <li>1. Crie uma pauta aberta e convide a equipe para cocriar o cronograma.</li>
+                    <li>2. Diante de impasses, coloque as opções em votação.</li>
+                    <li>3. Fale menos e ouça mais nas próximas 3 reuniões.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="res-Servidor" class="result-card hidden">
+            <div class="icon-result">🤲</div>
+            <h2 class="result-title">Postura Servidora</h2>
+            <p class="paragraph-main">Sinal de alerta! A sua equipe está desgastada emocionalmente ou com medo de errar. Focar apenas em metas agora vai piorar o cenário.</p>
+            <div class="action-box">
+                <h3>O que você deve fazer AGORA:</h3>
+                <ul>
+                    <li>1. Chame os membros para conversas 1 a 1 (Feedbacks de escuta).</li>
+                    <li>2. Remova os obstáculos operacionais que estão atrasando o time.</li>
+                    <li>3. Priorize a saúde mental: ajuste escopos ou redistribua tarefas.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div id="res-Autocrático" class="result-card hidden">
+            <div class="icon-result">⚡</div>
+            <h2 class="result-title">Postura Autocrática</h2>
+            <p class="paragraph-main">Aviso de crise! O prazo estourou ou o risco do projeto é altíssimo. A equipe precisa de direção imediata, não de debates ou reuniões longas.</p>
+            <div class="action-box">
+                <h3>O que você deve fazer AGORA:</h3>
+                <ul>
+                    <li>1. Centralize as decisões críticas imediatamente.</li>
+                    <li>2. Distribua tarefas diretas, claras e com prazos em horas, não dias.</li>
+                    <li>3. Proteja a operação focando exclusivamente na entrega essencial.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="action-footer">
+            <button onclick="window.location.href='index.html'" class="btn-secondary">Voltar ao Início</button>
+        </div>
+    </main>
+
+    <script>
+        window.onload = () => {
+            const neededProfile = localStorage.getItem('projectNeeds');
+            if (neededProfile) {
+                document.getElementById(`res-${neededProfile}`).classList.remove('hidden');
+            }
+        };
+    </script>
+</body>
+</html>

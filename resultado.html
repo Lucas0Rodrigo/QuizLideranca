@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seu Perfil | MindLeaders</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    
+    <header class="navbar">
+        <div class="container nav-content">
+            <div class="logo">MindLeaders</div>
+        </div>
+    </header>
+
+    <main class="container result-content">
+        <div class="result-header">
+            <h1 class="title-main">O seu perfil é:</h1>
+        </div>
+        
+        <div id="res-Transformacional" class="result-card hidden">
+            <div class="icon-result">🚀</div>
+            <h2 class="result-title">Líder Transformacional</h2>
+            <p class="paragraph-main">Você é focado em inspirar e motivar os colaboradores, sendo um verdadeiro motor para a inovação e mudanças organizacionais. Você guia a equipe pela visão de futuro, mas cuidado para não se perder nas grandes ideias e esquecer a execução prática do dia a dia.</p>
+        </div>
+
+        <div id="res-Servidor" class="result-card hidden">
+            <div class="icon-result">🤲</div>
+            <h2 class="result-title">Líder Servidor</h2>
+            <p class="paragraph-main">Você coloca as necessidades da equipe em primeiro lugar, priorizando o bem-estar e o desenvolvimento pessoal de cada membro. É um estilo poderoso para criar lealdade e empatia, mas lembre-se de que, às vezes, decisões difíceis precisam ser tomadas em prol do projeto.</p>
+        </div>
+
+        <div id="res-Democrático" class="result-card hidden">
+            <div class="icon-result">🤝</div>
+            <h2 class="result-title">Líder Democrático</h2>
+            <p class="paragraph-main">O seu estilo baseia-se na valorização da participação coletiva, onde as decisões são tomadas com a colaboração do grupo. Isso gera um engajamento gigante, mas preste atenção para não atrasar entregas urgentes buscando sempre o consenso de todo mundo.</p>
+        </div>
+
+        <div id="res-Autocrático" class="result-card hidden">
+            <div class="icon-result">⚡</div>
+            <h2 class="result-title">Líder Autocrático</h2>
+            <p class="paragraph-main">As suas decisões são centralizadas. Esse estilo é uma ferramenta estratégica vital em cenários de crise que exigem rapidez. Você resolve problemas depressa e protege a operação, mas tome muito cuidado para não sufocar a criatividade da equipe com excesso de autoridade.</p>
+        </div>
+
+        <div class="action-footer">
+            <button onclick="window.location.href='index.html'" class="btn-secondary">Voltar ao Início</button>
+        </div>
+    </main>
+
+    <script>
+        window.onload = () => {
+            const finalProfile = localStorage.getItem('userLeaderProfile');
+            if (finalProfile) {
+                const winningCard = document.getElementById(`res-${finalProfile}`);
+                if (winningCard) {
+                    winningCard.classList.remove('hidden');
+                }
+            }
+        };
+    </script>
+</body>
+</html>
